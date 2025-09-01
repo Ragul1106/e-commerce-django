@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-40bhd2m#@*+izlo+h%*zz1^f26jsq2%xpst2p)qyw1*)juypd@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['e-commerce-django-zoup.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'asia/kolkata'
 
 USE_I18N = True
 
