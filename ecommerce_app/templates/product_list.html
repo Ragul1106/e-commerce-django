@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<form method="get" class="mb-3">
+    <input type="text" name="query" placeholder="Search..." value="{{ request.GET.query }}">
+    <button type="submit" class="btn btn-primary btn-sm">Search</button>
+</form>
+<div class="row">
+  {% for product in products %}
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <img src="{{ product.image.url }}" class="card-img-top" style="height:200px;object-fit:cover;">
+        <div class="card-body">
+          <h5>{{ product.name }}</h5>
+          <p>${{ product.price }}</p>
+          {% if product.stock < 1 %}
+            <span class="badge bg-danger">Out of Stock</span>
+          {% endif %}
+          <a href="{{ product.get_absolute_url }}" class="btn btn-sm btn-primary mt-2">View</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
